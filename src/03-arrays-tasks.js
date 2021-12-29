@@ -328,8 +328,11 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  const DIGITS_ORDER = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const sortCallback = (a, b) => DIGITS_ORDER.indexOf(a) - DIGITS_ORDER.indexOf(b);
+
+  return arr.sort(sortCallback);
 }
 
 /**
